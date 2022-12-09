@@ -135,20 +135,20 @@ fun BluetoothDeviceData.sampleReceiptV2(context: Context) {
     val headerLogo = InputUtils.generateBitmapFromResource(context, R.drawable.cmb_logo_print_header)
     sendMessage(BluetoothPrinterCommands.ALIGNMENT_CENTER, headerLogo.replaceTransparentBackground(Color.WHITE).toPrinterByteArray()!!)
 
-    var receiptText = "\n\n"
+    var receiptText = "\n"
     receiptText += "ABC Group Pvt Ltd \n"
-    receiptText += "Galle Road, Dehiwala \n\n"
-    receiptText += "DUPLICATE \n\n"
+    receiptText += "Galle Road, Dehiwala \n"
+    receiptText += "DUPLICATE \n"
     sendMessage(BluetoothPrinterCommands.ALIGNMENT_CENTER, receiptText.toPrinterByteArray())
 
     receiptText = "DATE/TIME: 2021-01-01 12:00:00 \n"
     receiptText += "MERCHANT ID: 14558856565556566 \n"
     receiptText += "TERMINAL ID: 1452625655 \n"
     receiptText += "BATCH NUM: 000003 \n"
-    receiptText += "TXN METHOD: NFC \n\n"
+    receiptText += "TXN METHOD: NFC \n"
     sendMessage(receiptText.toPrinterByteArray())
 
-    receiptText = "SALE \n\n"
+    receiptText = "SALE \n"
     sendMessage(BluetoothPrinterCommands.ALIGNMENT_CENTER, BluetoothPrinterCommands.FONT_WEIGHT_BOLD, receiptText.toPrinterByteArray())
 
     receiptText = "CARD NO: 4424 13XX XXXX 4356 \n"
@@ -158,10 +158,10 @@ fun BluetoothDeviceData.sampleReceiptV2(context: Context) {
     receiptText += "AID: A000000000000000031010 \n"
     receiptText += "APP CODE: 052558 \n"
     receiptText += "RRN NO: 0000004 \n"
-    receiptText += "TRACK NUM: 000006 \n\n"
+    receiptText += "TRACK NUM: 000006 \n"
     sendMessage(receiptText.toPrinterByteArray())
 
-    receiptText = "Total: LKR 1,200.00 \n\n"
+    receiptText = "Total: LKR 1,200.00 \n"
     sendMessage(BluetoothPrinterCommands.ALIGNMENT_CENTER, BluetoothPrinterCommands.FONT_WEIGHT_BOLD, receiptText.toPrinterByteArray())
 
     receiptText = "*** Signature not required *** \n"
