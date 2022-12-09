@@ -1,0 +1,9 @@
+<resources>
+    <string name="set_as_default">Set as Default</string>
+    <string name="print_test">Print Test</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="connect">Connect</string>
+    <string name="clear_default">Clear Default</string>
+    <string name="unpair">Unpair</string>
+    <string name="pair">Pair</string>
+</resources>
