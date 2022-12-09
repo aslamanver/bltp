@@ -1,6 +1,7 @@
 package com.aslam.bltprinter
 
 import android.os.Bundle
+import com.aslam.bltp.ui.BaseActivity
 import com.aslam.bltprinter.databinding.ActivityBitmapBinding
 
 class BitmapActivity(override val layoutId: Int = R.layout.activity_bitmap) : BaseActivity<ActivityBitmapBinding>() {

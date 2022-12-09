@@ -13,4 +13,10 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
+    <application>
+        <activity
+            android:name=".ui.BluetoothPrinterActivity"
+            android:exported="true" />
+    </application>
+
 </manifest>

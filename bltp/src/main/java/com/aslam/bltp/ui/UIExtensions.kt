@@ -1,4 +1,4 @@
-package com.aslam.bltprinter.utils
+package com.aslam.bltp.ui
 
 import android.content.Context
 import android.content.Intent
@@ -9,8 +9,6 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.aslam.bltprinter.BaseActivity
-import com.aslam.bltprinter.R
 
 const val REQUEST_CODE = 2010
 
@@ -29,7 +27,7 @@ fun String.toLogcat(context: Context, length: Int = Toast.LENGTH_SHORT) {
     }
 }
 
-fun AppCompatActivity.setTitleWithIcon(titleText: String = getString(R.string.app_name), icon: Int) {
+fun AppCompatActivity.setTitleWithIcon(titleText: String = "Bluetooth Printer", icon: Int) {
     supportActionBar?.apply {
         title = "\t${titleText}"
         setIcon(icon)
