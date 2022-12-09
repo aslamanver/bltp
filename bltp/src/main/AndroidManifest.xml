@@ -15,6 +15,7 @@
 
     <application>
         <activity
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
             android:name=".ui.BluetoothPrinterActivity"
             android:exported="true" />
     </application>
