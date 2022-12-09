@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="#f1f1f1"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:orientation="vertical"
             android:paddingHorizontal="10dp"
             android:paddingVertical="15dp">
@@ -22,23 +22,9 @@
                 android:id="@+id/btnPrint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:text="Print Test Receipt" />
-
-            <TextView
-                android:id="@+id/txtStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Please wait.."
-                android:textColor="#777"
-                android:textSize="16sp" />
+                android:text="Open Printer Activity" />
 
         </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
     </LinearLayout>
 

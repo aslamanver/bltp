@@ -13,8 +13,6 @@ public class BitmapReceipt {
 
     public static Bitmap generateReceipt(Context context) {
 
-        Bitmap logoImg = BitmapFactory.decodeResource(context.getResources(), R.drawable.seylan_logo);
-
         String mName = "Test PAX";
         String mAddress1 = "No 192, Dehiwala";
         String mAddress2 = "Colombo";
@@ -59,14 +57,9 @@ public class BitmapReceipt {
         int x = 15;
         int yConstant = 22;
 
-        // Bitmap logoCarg = BitmapFactory.decodeResource(getResources(), R.drawable.print_cargills);
-        canvas.drawBitmap(logoImg, null, new Rect(x, y, bWidth - 50, 100), null);
-
-        // Bitmap logoSuperm = BitmapFactory.decodeResource(getResources(), R.drawable.print_supreme);
-        // canvas.drawBitmap(logoSuperm, null, new Rect((bWidth / 2) + 50, y, bWidth - 30, 70), null);
-        //
-        // Bitmap logoAliPay = BitmapFactory.decodeResource(getResources(), R.drawable.print_alipay);
-        // canvas.drawBitmap(logoAliPay, null, new Rect((bWidth / 2) - 40, y + 60, (bWidth / 2) + 70, y + 95), null);
+        // TODO: Uncomment
+        // Bitmap logoImg = BitmapFactory.decodeResource(context.getResources(), R.drawable.logo);
+        // canvas.drawBitmap(logoImg, null, new Rect(x, y, bWidth - 50, 100), null);
 
         y = y + yConstant + 115;
         paint.setTextSize(22);
@@ -143,9 +136,9 @@ public class BitmapReceipt {
         y = y + yConstant;
         canvas.drawText(ln2, x, y, paint);
 
-        y = y + yConstant + 10;
-        Bitmap printPayable = BitmapFactory.decodeResource(context.getResources(), R.drawable.print_powered_by_payable);
-        canvas.drawBitmap(printPayable, null, new Rect(x, y, 170, y + 50), null);
+        // y = y + yConstant + 10;
+        // Bitmap printPayable = BitmapFactory.decodeResource(context.getResources(), R.drawable.print_powered_by_payable);
+        // canvas.drawBitmap(printPayable, null, new Rect(x, y, 170, y + 50), null);
 
         y = y + yConstant + 60;
         canvas.drawText(ln3, x, y, paint);

@@ -10,6 +10,8 @@ class MainActivity(override val layoutId: Int = R.layout.activity_main) : BaseAc
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        startActivity(Intent(this, BluetoothPrinterActivity::class.java))
+        binding.btnPrint.setOnClickListener {
+            startActivity(Intent(this, BluetoothPrinterActivity::class.java))
+        }
     }
 }
