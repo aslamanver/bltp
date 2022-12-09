@@ -351,10 +351,10 @@ class BluetoothPrinter private constructor(private val context: Context) {
         }
 
         private fun isPermissionsGranted(context: Context): Boolean {
-            return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            return if (Build.VERSION.SDK_INT >= 31) {
                 ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
-                        ContextCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED &&
-                        ContextCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_SCAN) == PackageManager.PERMISSION_GRANTED
+                        ContextCompat.checkSelfPermission(context, "android.permission.BLUETOOTH_CONNECT") == PackageManager.PERMISSION_GRANTED &&
+                        ContextCompat.checkSelfPermission(context, "android.permission.BLUETOOTH_SCAN") == PackageManager.PERMISSION_GRANTED
             } else {
                 ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
             }
@@ -373,9 +373,9 @@ class BluetoothPrinter private constructor(private val context: Context) {
                         Manifest.permission.ACCESS_FINE_LOCATION,
                     )
 
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                        permissions.add(Manifest.permission.BLUETOOTH_CONNECT)
-                        permissions.add(Manifest.permission.BLUETOOTH_SCAN)
+                    if (Build.VERSION.SDK_INT >= 31) {
+                        permissions.add("android.permission.BLUETOOTH_CONNECT")
+                        permissions.add("android.permission.BLUETOOTH_SCAN")
                     }
 
                     ActivityCompat.requestPermissions(
