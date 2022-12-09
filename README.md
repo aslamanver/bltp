@@ -11,7 +11,7 @@ BLTP - Bluetooth Printer SDK - Android - Lightweight SDK written in Kotlin and J
 Add the below dependency into your module level `settings.gradle` or `build.gradle` file
 
 ```gradle
-implementation 'com.aslam:retrofit-lite:1.0.5'
+implementation 'com.github.aslamanver:bltp:+'
 ```
 
 ### Simple Usage
