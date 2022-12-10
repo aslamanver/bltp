@@ -28,6 +28,7 @@ import java.util.*
 @SuppressLint("MissingPermission")
 class BluetoothPrinter private constructor(private val context: Context) {
 
+    var debugMode = false
     private var bluetoothAdapter: BluetoothAdapter = ContextCompat.getSystemService(context, BluetoothManager::class.java)!!.adapter
 
     private val deviceMap: MutableMap<String, BluetoothDeviceData> = mutableMapOf()
@@ -240,6 +241,8 @@ class BluetoothPrinter private constructor(private val context: Context) {
         }
     }
 
+    fun getDefaultDevice() = deviceMap[context.defaultDeviceAddress.value]
+
     inner class ConnectThread(val bluetoothDeviceData: BluetoothDeviceData) : Thread() {
 
         private val uuid: UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb")
@@ -398,7 +401,5 @@ class BluetoothPrinter private constructor(private val context: Context) {
                 // of(context).deviceMap[bluetoothDeviceData.device.address]?.connection?.close()
             }
         }
-
-        fun getDefaultDevice(context: Context) = of(context).deviceMap[context.defaultDeviceAddress.value]
     }
 }

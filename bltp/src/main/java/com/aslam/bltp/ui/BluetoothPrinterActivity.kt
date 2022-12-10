@@ -3,6 +3,7 @@ package com.aslam.bltp.ui
 import android.annotation.SuppressLint
 import android.graphics.*
 import android.os.Bundle
+import android.view.View
 import com.aslam.bltp.R
 import com.aslam.bltp.bluetooth.BluetoothPrinter
 import com.aslam.bltp.bluetooth.BluetoothPrinterListener
@@ -13,6 +14,7 @@ import com.aslam.bltp.databinding.ActivityBltpBinding
 @SuppressLint("MissingPermission")
 class BluetoothPrinterActivity(override val layoutId: Int = R.layout.activity_bltp) : BaseActivity<ActivityBltpBinding>() {
 
+    private val bluetoothPrinter: BluetoothPrinter by bluetoothPrinter()
     private lateinit var uiDeviceAdapter: UIDeviceAdapter
 
     private val bluetoothPrinterListener = object : BluetoothPrinterListener {
@@ -97,18 +99,22 @@ class BluetoothPrinterActivity(override val layoutId: Int = R.layout.activity_bl
         binding.recyclerView.setBluetoothDeviceAdapter(this, uiDeviceAdapter)
 
         binding.btnPrint.setOnClickListener {
-            BluetoothPrinter.getDefaultDevice(this)?.sampleReceiptV2(this)
+            bluetoothPrinter.getDefaultDevice()?.sampleReceiptV2(this)
+        }
+
+        if (!bluetoothPrinter.debugMode) {
+            binding.debugLayout.visibility = View.GONE
         }
     }
 
     override fun onResume() {
         super.onResume()
-        BluetoothPrinter.of(this).startScan(bluetoothPrinterListener)
+        bluetoothPrinter.startScan(bluetoothPrinterListener)
     }
 
     override fun onPause() {
         super.onPause()
-        BluetoothPrinter.of(this).stopScan(bluetoothPrinterListener)
+        bluetoothPrinter.stopScan(bluetoothPrinterListener)
     }
 
     // override fun onDestroy() {

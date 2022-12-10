@@ -27,9 +27,9 @@
         </LinearLayout>-->
 
         <LinearLayout
+            android:id="@+id/debugLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
             android:background="#f1f1f1"
             android:gravity="center"
             android:orientation="vertical"
@@ -54,6 +54,8 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:paddingTop="10dp"
+            android:clipToPadding="false"
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
